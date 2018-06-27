@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BestMovies.Views.TVShowDetailsPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Image Source="{Binding TVShow.PosterImage}" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" WidthRequest="300" />  
+            <Label Text="{Binding TVShow.Name}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />   
+            <StackLayout Orientation="Vertical">
+                <Label Text="First Aired: " LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="13" />
+                <Label Text="{Binding TVShow.ReleaseDate}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="13" />
+            </StackLayout>
+
+            <Label Text="{Binding TVShow.Overview}" LineBreakMode="WordWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="13" />
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

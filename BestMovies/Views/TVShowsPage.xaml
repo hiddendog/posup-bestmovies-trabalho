@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BestMovies.Views.TVShowsPage">
+   <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="PopularTVShowsListView" ItemsSource="{Binding PopularTVShows.Results}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadPopularTVShowsCommand}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <Image Source="{Binding PosterThumb}" Aspect="AspectFill" WidthRequest="50" />
+                                <StackLayout Padding="10" Orientation="Vertical">
+                                    <Label Text="{Binding Name}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                                    <StackLayout Padding="10" Orientation="Horizontal">
+                                        <Label HorizontalTextAlignment="Start" Text="{Binding Genres}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="13" />
+                                        <Label HorizontalOptions="End" HorizontalTextAlignment="End" Text="{Binding Popularity}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="13" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
